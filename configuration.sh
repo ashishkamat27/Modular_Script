@@ -11,7 +11,7 @@ if   	! which php > /dev/null; then
    	echo "Installinig Php and php-mysql..."
   	sleep 5
   	yum clean all
-  	yum -y install php55-php php55-php-mysql php55-php-pecl-xdebug
+  	sudo yum -y install php55-php php55-php-mysql php55-php-pecl-xdebug
 	head -n3 /opt/rh/php55/enable>>.bash_profile
   	printf "\n\n"
 
@@ -34,16 +34,16 @@ if 	! which mysql>/dev/null; then
 	if [ $# -eq0 ]; then
 		echo "No arguments supplied ..\n Using default root credeantails"
 	yum clean all
-	yum -y install mysql-server
-	service mysqld start
+	sudo yum -y install mysql-server
+	sudo service mysqld start
 	#mysql -u root -p$ROOTPW
 	printf "\n\n"
 	
 	else 
 	echo "Arguments supplied... Using given Mysql password..."
 	yum clean all
-	yum -y install mysql-server
-	service mysqld start
+	sudo yum -y install mysql-server
+	sudo service mysqld start
 	#mysql -u root -p$2
 	printf "\n\n"
  	fi
@@ -51,19 +51,19 @@ else
 	echo "MySQL is installed."    
        if [ $# -eq 0 ]; then 
 		echo "Mysql password not supplied using default password"
-		service mysqld start
+		sudo service mysqld start
 		#mysql -u root -p$ROOTPW
  		printf "\n\n"
       else 
 	 	echo "Mysql password is supplied using given password"
-		service mysqld start
+		sudo service mysqld start
 		#mysql -u root -p$2
  		printf "\n\n"
      fi
 fi
 ############## Apache Setup ####################
 
-setenforce 0
-service httpd24-httpd start
+sudo setenforce 0
+sudo service httpd24-httpd start
 
 
