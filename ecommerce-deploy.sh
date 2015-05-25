@@ -8,9 +8,9 @@ echo "###########################################################"
 echo "Taking artifact and extactacting into Web Server Directory"
 echo "###########################################################"
 cp -r ecommerce-cd.zip $DESTINATION
-unzip $SOURCE_ZIP  $DESTINATION  #given here static path can be changed later
 echo "Wait!! Let me go to web server directory"
 cd $DESTINATION
+unzip $SOURCE_ZIP  $DESTINATION  #given here static path can be changed later
 sleep 5
 echo "Giving executable permission to artifact"
 chmod -R 777 ecommerce-cd
