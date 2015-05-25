@@ -13,10 +13,11 @@ if   	! which php > /dev/null; then
   	yum clean all
   	 yum -y install php55-php php55-php-mysql php55-php-pecl-xdebug
 	cd ~
-	head -n3 /opt/rh/php55/enable>>.bash_profile
-	echo "export PATH=/opt/rh/php55/root/usr/bin:/opt/rh/php55/root/usr/sbin${PATH:+:${PATH}}
-export MANPATH=/opt/rh/php55/root/usr/share/man:${MANPATH}
-">>.bashrc
+	head -n3 /opt/rh/httpd24/enable>>.bash_profile
+	head -n3 /opt/rh/php55/enable>>.bashrc
+	#echo "export PATH=/opt/rh/php55/root/usr/bin:/opt/rh/php55/root/usr/sbin${PATH:+:${PATH}}
+#export MANPATH=/opt/rh/php55/root/usr/share/man:${MANPATH}
+#">>.bashrc
 	source ~/.bash_profile
 	source ~/.bashrc
   	printf "\n\n"
