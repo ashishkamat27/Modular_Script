@@ -40,7 +40,7 @@ if ! which mysql > /dev/null; then
    if [ $# -eq 0 ]; then
 	 echo "No arguments supplied... Using default MySQL Root Password..."
      yum -y install mysql-server
-     service mysqld start
+    /etc/init.d/mysqld start
 	 mysqladmin -u root password "$ROOTPW"
      printf "\n\n"
 	 
@@ -55,7 +55,7 @@ if ! which mysql > /dev/null; then
    else 
      echo "Arguments Supplied... Using provided MySQL Password..."
 	 yum -y install mysql-server
-     service mysqld start
+      /etc/init.d/mysqld start
 	 mysqladmin -u root password "$2"
 	 printf "\n\n"
 	 echo "**********************************************************************"
@@ -75,7 +75,7 @@ else
      echo "MySQL Password not supplied... Using default MySQL Password..."
      sleep 3
      printf "\n\n"  
-     service mysqld start
+      /etc/init.d/mysqld start
  
      echo "**********************************************************************"
      echo "Creating Sonar Database..."
@@ -86,7 +86,7 @@ else
 	
    else
 	 echo "MySQL Password Supplied... Using Supplied MySQL Password to create database..." 
-     service mysqld start
+      /etc/init.d/mysqld start
 	 echo "**********************************************************************"
      echo "Creating Sonar Database..."
      echo "**********************************************************************"
