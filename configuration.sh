@@ -14,6 +14,7 @@ if   	! which php > /dev/null; then
   	 yum -y install php55-php php55-php-mysql php55-php-pecl-xdebug
 	cd ~
 	head -n3 /opt/rh/php55/enable>>.bash_profile
+	source ~/.bash_profile
   	printf "\n\n"
 
 else 
