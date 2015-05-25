@@ -45,12 +45,11 @@ if ! which mysql > /dev/null; then
      printf "\n\n"
 	 
 	 echo "**********************************************************************"
-	 echo "Creating Sonar Database..."
-	 echo "**********************************************************************"
-     sleep 3
-     printf "\n\n"
+	  echo "Mysql service started.."
+     echo "**********************************************************************"
+     printf "Connecting to DB\n\n"
 
-     mysql -u root -p$ROOTPW
+     mysql -u root -p ''
    
    else 
      echo "Arguments Supplied... Using provided MySQL Password..."
@@ -59,10 +58,9 @@ if ! which mysql > /dev/null; then
 	 mysqladmin -u root password "$2"
 	 printf "\n\n"
 	 echo "**********************************************************************"
-     echo "Creating Sonar Database..."
-	 echo "**********************************************************************"
-	 sleep 3
-	 printf "\n\n"
+      echo "Mysql service started.."
+     echo "**********************************************************************"
+     printf "Connecting to DB\n\n"
 
 	 mysql -u root -p$2 
    fi
@@ -78,20 +76,19 @@ else
       /etc/init.d/mysqld start
  
      echo "**********************************************************************"
-     echo "Creating Sonar Database..."
+     echo "Mysql service started.."
      echo "**********************************************************************"
-     sleep 3
-     printf "\n\n"
-     mysql -u root -p
+     printf "Connecting to DB\n\n"
+     mysql -u root -p ''
+	exit
 	
    else
 	 echo "MySQL Password Supplied... Using Supplied MySQL Password to create database..." 
       /etc/init.d/mysqld start
 	 echo "**********************************************************************"
-     echo "Creating Sonar Database..."
+    echo "Mysql service started.."
      echo "**********************************************************************"
-     sleep 3
-     printf "\n\n"
+     printf "Connecting to DB\n\n"
      mysql -u root -p$2 
    fi 
 fi
