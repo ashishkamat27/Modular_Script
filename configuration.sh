@@ -35,7 +35,7 @@ if 	! which mysql>/dev/null; then
 		echo "No arguments supplied ..\n Using default root credeantails"
 	yum clean all
 	sudo yum -y install mysql-server
-	sudo service mysqld start
+	sudo /etc/init.d/mysqld start
 	#mysql -u root -p$ROOTPW
 	printf "\n\n"
 	
@@ -43,7 +43,7 @@ if 	! which mysql>/dev/null; then
 	echo "Arguments supplied... Using given Mysql password..."
 	yum clean all
 	sudo yum -y install mysql-server
-	sudo service mysqld start
+	sudo /etc/init.d/mysqld start
 	#mysql -u root -p$2
 	printf "\n\n"
  	fi
@@ -51,12 +51,12 @@ else
 	echo "MySQL is installed."    
        if [ $# -eq 0 ]; then 
 		echo "Mysql password not supplied using default password"
-		sudo service mysqld start
+		sudo/etc/init.d/mysqld start
 		#mysql -u root -p$ROOTPW
  		printf "\n\n"
       else 
 	 	echo "Mysql password is supplied using given password"
-		sudo service mysqld start
+		sudo /etc/init.d/mysqld start
 		#mysql -u root -p$2
  		printf "\n\n"
      fi
@@ -64,6 +64,6 @@ fi
 ############## Apache Setup ####################
 
 sudo setenforce 0
-sudo service httpd24-httpd start
+sudo /etc/init.d/httpd24-httpd start
 
 
