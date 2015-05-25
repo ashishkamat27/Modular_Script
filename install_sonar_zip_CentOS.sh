@@ -8,7 +8,7 @@
 
 ##### Declare variables ##### 
 
-ROOTPW=redhat
+
 DBNAME=sonar
 DBUSER=sonar
 DBPASS=sonar
@@ -41,7 +41,7 @@ if ! which mysql > /dev/null; then
 	 echo "No arguments supplied... Using default MySQL Root Password..."
      yum -y install mysql-server
     /etc/init.d/mysqld start
-	 mysqladmin -u root password "$ROOTPW"
+	 mysqladmin -u root password 
      printf "\n\n"
 	 
 	 echo "**********************************************************************"
@@ -82,7 +82,7 @@ else
      echo "**********************************************************************"
      sleep 3
      printf "\n\n"
-     mysql -u root -p$ROOTPW 
+     mysql -u root -p
 	
    else
 	 echo "MySQL Password Supplied... Using Supplied MySQL Password to create database..." 
