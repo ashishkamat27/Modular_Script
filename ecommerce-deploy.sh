@@ -7,9 +7,9 @@ DESTINATION=$2
 echo "###########################################################"
 echo "Taking artifact and extactacting into Web Server Directory"
 echo "###########################################################"
-unzip -d /opt/rh/httpd24/root/var/www/html/ecommerce-cd /var/lib/jenkins/jobs/Ecomm_project_CI/workspace/ecomm_project.zip #given here static path can be changed later
+unzip -d $DESTINATION $SOURCE_ZIP #given here static path can be changed later
 echo "Wait!! Let me go to web server directory"
-cd /opt/rh/httpd24/root/var/www/html/
+cd $DESTINATION
 sleep 5
 echo "Giving executable permission to artifact"
 chmod -R 777 ecommerce-cd
