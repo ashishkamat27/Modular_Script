@@ -31,7 +31,7 @@ fi
 
 ############## MySQL installation ####################
 echo "#######################################################"
-echo "Installing Php"
+echo "Installing MYsql"
 echo "#######################################################"
 if 	! which mysql>/dev/null; then 
 	echo -e "Mysql is not installed!! \c"
@@ -43,7 +43,7 @@ if 	! which mysql>/dev/null; then
 	yum clean all
 	 yum -y install mysql-server
 	 /etc/init.d/mysqld start
-	#mysql -u root -p$ROOTPW
+	mysql -u root -p$ROOTPW
 	printf "\n\n"
 	
 	else 
@@ -51,21 +51,24 @@ if 	! which mysql>/dev/null; then
 	yum clean all
 	 yum -y install mysql-server
 	 /etc/init.d/mysqld start
-	#mysql -u root -p$2
+	mysql -u root -p$2
 	printf "\n\n"
+	exit
  	fi
 else
 	echo "MySQL is installed."    
        if [ $# -eq 0 ]; then 
 		echo "Mysql password not supplied using default password"
 		/etc/init.d/mysqld start
-		#mysql -u root -p$ROOTPW
+		mysql -u root -p$ROOTPW
  		printf "\n\n"
+		exit
       else 
 	 	echo "Mysql password is supplied using given password"
 		 /etc/init.d/mysqld start
-		#mysql -u root -p$2
+		mysql -u root -p$2
  		printf "\n\n"
+		exit
      fi
 fi
 ############## Apache Setup ####################
