@@ -7,7 +7,8 @@ DESTINATION=$2
 echo "###########################################################"
 echo "Taking artifact and extactacting into Web Server Directory"
 echo "###########################################################"
-unzip -d $DESTINATION $SOURCE_ZIP #given here static path can be changed later
+cp -r ecommerce-cd.zip $DESTINATION
+unzip  $DESTINATION $SOURCE_ZIP #given here static path can be changed later
 echo "Wait!! Let me go to web server directory"
 cd $DESTINATION
 sleep 5
@@ -21,6 +22,7 @@ echo "##################################################"
 echo "Restart Apache"
 echo "######################################################"
 service httpd24-httpd graceful
+rm -rf ecommerce-cd.zip
 echo "success Check your site by typing ecommerce-cd in browser"
 echo "###############################################"
 cd /opt/rh/httpd24/root/etc/httpd/conf.d/
