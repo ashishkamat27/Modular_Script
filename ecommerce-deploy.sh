@@ -7,11 +7,11 @@ DESTINATION=$3
 echo "###########################################################"
 echo "Taking artifact and extactacting into Web Server Directory"
 echo "###########################################################"
-cp  ecommerce-cd.zip  /opt/rh/httpd24/root/var/www/html
+#cp  ecommerce-cd.zip  /opt/rh/httpd24/root/var/www/html
 echo "Wait!! Let me go to web server directory"
-cd $DESTINATION
 pwd
-unzip $SOURCE_ZIP  $DESTINATION  #given here static path can be changed later
+unzip -d /opt/rh/httpd24/root/var/www/html/ecommerce-cd  ecommerce-cd.zip   #given here static path can be changed later
+cd /opt/rh/httpd24/root/var/www/html/
 sleep 5
 echo "Giving executable permission to artifact"
 chmod -R 777 ecommerce-cd
