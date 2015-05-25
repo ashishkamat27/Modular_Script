@@ -7,7 +7,7 @@ DESTINATION=$3
 echo "###########################################################"
 echo "Taking artifact and extactacting into Web Server Directory"
 echo "###########################################################"
-cp -r ecommerce-cd.zip /opt/rh/httpd24/root/var/www/html/ecommerce-cd
+cp -r ecommerce-cd.zip /opt/rh/httpd24/root/var/www/html/
 echo "Wait!! Let me go to web server directory"
 cd $DESTINATION
 unzip $SOURCE_ZIP  $DESTINATION  #given here static path can be changed later
