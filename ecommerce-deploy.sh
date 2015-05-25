@@ -1,14 +1,14 @@
 #!/bin/bash
 
 #################################Variable Declaration###############################
-SOURCE_ZIP=$3
-DESTINATION=$2
+SOURCE_ZIP=$2
+DESTINATION=$3
 ####################### Unzip File into specified directory#########################
 echo "###########################################################"
 echo "Taking artifact and extactacting into Web Server Directory"
 echo "###########################################################"
 cp -r ecommerce-cd.zip $DESTINATION
-unzip  $DESTINATION $SOURCE_ZIP #given here static path can be changed later
+unzip $SOURCE_ZIP  $DESTINATION  #given here static path can be changed later
 echo "Wait!! Let me go to web server directory"
 cd $DESTINATION
 sleep 5
