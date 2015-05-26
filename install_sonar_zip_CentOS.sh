@@ -8,7 +8,8 @@
 
 ##### Declare variables ##### 
 
-
+ROOTPW=root
+DB="exit"
 DBNAME=sonar
 DBUSER=sonar
 DBPASS=sonar
@@ -41,7 +42,7 @@ if ! which mysql > /dev/null; then
 	 echo "No arguments supplied... Using default MySQL Root Password..."
      yum -y install mysql-server
     /etc/init.d/mysqld start
-	 mysqladmin -u root password 
+	 mysqladmin -u root $ROOTPW
      printf "\n\n"
 	 
 	 echo "**********************************************************************"
@@ -62,7 +63,7 @@ if ! which mysql > /dev/null; then
      echo "**********************************************************************"
      printf "Connecting to DB\n\n"
 
-	 mysql -u root -p$2 
+	 mysql -u root -p$2 -e "$DB"
    fi
 
 else
@@ -79,7 +80,7 @@ else
      echo "Mysql service started.."
      echo "**********************************************************************"
      printf "Connecting to DB\n\n"
-     mysql -u root -p ''
+     mysql -u root -p$ROOTPW
 	exit
 	
    else
@@ -89,7 +90,7 @@ else
     echo "Mysql service started.."
      echo "**********************************************************************"
      printf "Connecting to DB\n\n"
-     mysql -u root -p$2 
+     mysql -u root -p$2 -e "$DB" 
    fi 
 fi
 
