@@ -10,7 +10,7 @@ echo "###########################################################"
 #cp  ecommerce-cd.zip  /opt/rh/httpd24/root/var/www/html
 echo "Wait!! Let me go to web server directory"
 pwd
-unzip -d /opt/rh/httpd24/root/var/www/html/ecommerce-cd  centos/ecommerce-cd.zip   #given here static path can be changed later
+unzip -d /opt/rh/httpd24/root/var/www/html/ecommerce-cd  ../ecommerce-cd.zip   #given here static path can be changed later
 cd /opt/rh/httpd24/root/var/www/html/
 sleep 5
 echo "Giving executable permission to artifact"
