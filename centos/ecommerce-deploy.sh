@@ -20,7 +20,7 @@ echo " Importing Database"
 echo "##################################################"
 cd ecommerce-cd/sql 
 pwd
-mysql -uroot -proot -hlocalhost <ecomm.sql
+mysql -uroot -proot <ecomm.sql
 mysql -uroot -proot -e "Show databases"
 echo "###################################################"
 echo " Adding Host Entry in hosts file"
