@@ -19,6 +19,7 @@ echo "###################################################"
 echo " Importing Database"
 echo "##################################################"
 cd ecommerce-cd/sql 
+pwd
 mysql -uroot -proot -hlocalhost <ecomm.sql
 mysql -uroot -proot -e "Show databases"
 echo "###################################################"
