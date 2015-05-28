@@ -33,7 +33,7 @@ echo  "127.0.0.1 ecommerce-cd">>/etc/hosts
 echo "##################################################"
 echo "Restart Apache"
 echo "######################################################"
-service httpd24-httpd graceful
+ /etc/init.d/httpd24-httpd graceful
 rm -rf ecommerce-cd.zip
 echo "success Check your site by typing ecommerce-cd in browser"
 echo "###############################################"
