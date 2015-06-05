@@ -10,11 +10,12 @@ echo "###########################################################"
 #cp  ecommerce-cd.zip  /opt/rh/httpd24/root/var/www/html
 echo "Wait!! Let me go to web server directory"
 pwd
-if 	[ -d /opt/rh/httpd24/root/var/www/html/ecommerce-cd ]; then 
-	echo "Directory exist no need to unzip";
-else 
+#if 	[ -d /opt/rh/httpd24/root/var/www/html/ecommerce-cd ]; then 
+#	echo "Directory exist no need to unzip";
+#else 
+	rm -rf /opt/rh/httpd24/root/var/www/html/ecommerce-cd
 	unzip -d /opt/rh/httpd24/root/var/www/html/ecommerce-cd  ../ecommerce-cd.zip   #given here static path can be changed later
-fi 
+#fi 
 cd /opt/rh/httpd24/root/var/www/html/
 sleep 5
 echo "Giving executable permission to artifact"
@@ -24,6 +25,7 @@ echo " Importing Database"
 echo "##################################################"
 cd ecommerce-cd/sql 
 pwd
+mysql -uroot -proot -e "DROP DATABASE IF EXISTS ecomm"
 mysql -uroot -proot <ecomm.sql
 mysql -uroot -proot -e "Show databases"
 echo "###################################################"
