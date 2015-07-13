@@ -1,0 +1,5 @@
+172.27.59.218 gandhark password
+172.27.59.207 ajinkyab password
+172.27.59.66 ashishka password
+172.27.59.182 root password
+172.27.59.82 dipikaj password
