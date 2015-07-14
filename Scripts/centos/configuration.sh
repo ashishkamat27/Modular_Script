@@ -74,5 +74,6 @@ fi
 
  setenforce 0
  /etc/init.d/httpd24-httpd start
+exit
 
 
