@@ -22,6 +22,7 @@ if   	! which php > /dev/null; then
 
 else 
 	echo "Php is installed."
+	php -v
 	printf "\n\n"
 	sleep 5
 fi
@@ -57,12 +58,14 @@ else
 	echo "MySQL is installed."    
        if [ $# -eq 0 ]; then 
 		echo "Mysql password not supplied using default password"
+		mysql --version
 		 /etc/init.d/mysqld start
 		#mysql -u root -p$ROOTPW
  		printf "\n\n"
 		
       else 
 	 	echo "Mysql password is supplied using given password"
+		mysql --version
 		 /etc/init.d/mysqld start
 		#mysql -u root -p$2
  		printf "\n\n"
