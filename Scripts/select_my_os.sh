@@ -6,7 +6,7 @@ if (cat /etc/*-release|grep -iq CentOS)
 		cd /home/$user/Scripts/centos
 		sh configuration.sh
 		sh ecommerce-deploy.sh
-		sh ecommerce-vhost.sh
+		#sh ecommerce-vhost.sh
 	elif (cat /etc/*-release|grep -iq Ubuntu)
 	then
 		echo "Ubuntu is detected \n\n";
@@ -14,7 +14,7 @@ if (cat /etc/*-release|grep -iq CentOS)
 		cd /home/$user/Scripts/ubuntu
 		sh configuration.sh
 		sh ecommerce-deploy.sh
-		sh ecommerce-vhost.sh
+		#sh ecommerce-vhost.sh
 	else 
 		echo "Some other";
 	fi

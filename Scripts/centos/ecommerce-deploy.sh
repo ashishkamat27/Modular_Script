@@ -13,8 +13,8 @@ pwd
 #if 	[ -d /opt/rh/httpd24/root/var/www/html/ecommerce-cd ]; then 
 #	echo "Directory exist no need to unzip";
 #else 
-	rm -rf /opt/rh/httpd24/root/var/www/html/ecommerce-cd
-	unzip -d /opt/rh/httpd24/root/var/www/html/ecommerce-cd  ../ecommerce-cd.zip   #given here static path can be changed later
+	rm -rf /opt/rh/httpd24/root/var/www/html/ecomm_project
+	unzip -d /opt/rh/httpd24/root/var/www/html/ecomm_project  ecomm_project.zip  #given here static path can be changed later
 #fi 
 cd /opt/rh/httpd24/root/var/www/html/
 sleep 5

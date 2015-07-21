@@ -14,7 +14,7 @@ pwd
 #	echo "Directory exist no need to unzip";
 #else 
 	rm -rf /var/www/html/ecomm_project
-	unzip -d /var/www/html/  ../ecomm_project.zip   #given here static path can be changed later
+	unzip -d /var/www/html/ ecomm_project.zip   #given here static path can be changed later
 #fi 
 cd /var/www/html/
 sleep 5
