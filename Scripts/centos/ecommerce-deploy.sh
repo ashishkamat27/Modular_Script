@@ -20,11 +20,11 @@ pwd
 cd /opt/rh/httpd24/root/var/www/html/
 sleep 5
 echo "Giving executable permission to artifact"
-chmod -R 777 ecommerce-cd
+chmod -R 777 ecomm_project
 echo "###################################################"
 echo " Importing Database"
 echo "##################################################"
-cd ecommerce-cd/sql 
+cd ecomm_project/sql 
 pwd
 mysql -uroot -proot -e "DROP DATABASE IF EXISTS ecomm"
 mysql -uroot -proot <ecomm.sql
@@ -37,7 +37,7 @@ echo "##################################################"
 echo "Restart Apache"
 echo "######################################################"
  /etc/init.d/httpd24-httpd graceful
-rm -rf ecommerce-cd.zip
+rm -rf ecomm_project.zip
 echo "success Check your site by typing ecommerce-cd in browser"
 echo "###############################################"
 cd /opt/rh/httpd24/root/etc/httpd/conf.d/
