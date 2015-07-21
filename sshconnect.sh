@@ -7,7 +7,7 @@ do
 	printf "********************\n\n";
 	export SSHPASS=$password
 	temp="sh /home/$username/Scripts/select_my_os.sh"
-	sshpass -e scp -r Scripts $username@$ip:/home/$username
+	sshpass -e scp -r Scripts ecomm_project.zip $username@$ip:/home/$username
 	echo "Detecting Operating System\n\n"
 	echo $temp|sshpass -p $password ssh $username@$ip 
 	#echo $ip;

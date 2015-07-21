@@ -3,6 +3,7 @@
 #################################Variable Declaration###############################
 SOURCE_ZIP=$2
 DESTINATION=$3
+user="$(whoami)"
 ####################### Unzip File into specified directory#########################
 echo "###########################################################"
 echo "Taking artifact and extactacting into Web Server Directory"
@@ -14,7 +15,7 @@ pwd
 #	echo "Directory exist no need to unzip";
 #else 
 	rm -rf /opt/rh/httpd24/root/var/www/html/ecomm_project
-	unzip -d /opt/rh/httpd24/root/var/www/html/ecomm_project  ecomm_project.zip  #given here static path can be changed later
+	unzip -d /opt/rh/httpd24/root/var/www/html/ecomm_project  /home/$user/ecomm_project.zip  #given here static path can be changed later
 #fi 
 cd /opt/rh/httpd24/root/var/www/html/
 sleep 5
