@@ -1,9 +1,9 @@
-if [ -f /opt/rh/httpd24/root/etc/httpd/conf.d/ecommerce-cd.conf ]; then
+if [ -f /opt/rh/httpd24/root/etc/httpd/conf.d/ecomm_project.conf ]; then
 echo -e "File is already exist"
 else
 
 echo -e '<VirtualHost *:80>
-    		<Directory "/opt/rh/httpd24/root/var/www/html/ecommerce-cd">
+    		<Directory "/opt/rh/httpd24/root/var/www/html/ecomm_project">
         	Options Indexes FollowSymLinks Includes ExecCGI
         	Order allow,deny
         	Allow from all
@@ -16,9 +16,9 @@ echo -e '<VirtualHost *:80>
         		php_value allow_call_time_pass_reference 0
    		</IfModule>
     		DirectoryIndex index.php
-    		DocumentRoot "/opt/rh/httpd24/root/var/www/html/ecommerce-cd"
-    		ServerName ecommerce-cd
-   	</VirtualHost>'>>/opt/rh/httpd24/root/etc/httpd/conf.d/ecommerce-cd.conf
+    		DocumentRoot "/opt/rh/httpd24/root/var/www/html/ecomm_project"
+    		ServerName ecomm_project
+   	</VirtualHost>'>>/opt/rh/httpd24/root/etc/httpd/conf.d/ecomm_project.conf
 fi
 
 

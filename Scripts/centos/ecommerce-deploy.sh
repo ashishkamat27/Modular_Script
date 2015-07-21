@@ -32,7 +32,7 @@ mysql -uroot -proot -e "Show databases"
 echo "###################################################"
 echo " Adding Host Entry in hosts file"
 echo "##################################################"
-echo  "127.0.0.1 ecommerce-cd">>/etc/hosts
+echo  "127.0.0.1 ecomm_project">>/etc/hosts
 echo "##################################################"
 echo "Restart Apache"
 echo "######################################################"
