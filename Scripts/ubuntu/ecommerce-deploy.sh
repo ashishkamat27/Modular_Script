@@ -3,6 +3,7 @@
 #################################Variable Declaration###############################
 SOURCE_ZIP=$2
 DESTINATION=$3
+user="$(whoami)"
 ####################### Unzip File into specified directory#########################
 echo "###########################################################"
 echo "Taking artifact and extactacting into Web Server Directory"
