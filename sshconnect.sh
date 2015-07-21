@@ -18,7 +18,7 @@ do
 	#sshpass -e sh /home/Scripts/select_my_os.sh
 	#echo $ip;
 	#echo $temp|sshpass -p $password ssh -t -t $username@$ip 
-	echo $temp|sshpass -p $password ssh -t -t  $username@$ip 
+	echo $temp|sshpass -p $password ssh $username@$ip 
 	#echo $ip;
 	#break;
 	#echo "Hello World from Ashish Kamat">>/home/$username/Desktop/; exit
