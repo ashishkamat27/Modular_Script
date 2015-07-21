@@ -37,6 +37,7 @@ echo "##################################################"
 echo "Virtual Host Configuration"
 echo "###################################################"
 	sh ecommerce-vhost.sh
+a2ensite ecomm_project.conf
 echo "Restart Apache"
 echo "######################################################"
  /etc/init.d/apache2 reload
