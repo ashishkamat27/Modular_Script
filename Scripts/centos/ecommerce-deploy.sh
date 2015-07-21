@@ -34,6 +34,30 @@ echo " Adding Host Entry in hosts file"
 echo "##################################################"
 echo  "127.0.0.1 ecomm_project">>/etc/hosts
 echo "##################################################"
+echo "Virtual Host Configuration"
+echo "##################################################"
+if [ -f /opt/rh/httpd24/root/etc/httpd/conf.d/ecomm_project.conf ]; then
+echo -e "File is already exist"
+else
+
+echo -e '<VirtualHost *:80>
+    		<Directory "/opt/rh/httpd24/root/var/www/html/ecomm_project">
+        	Options Indexes FollowSymLinks Includes ExecCGI
+        	Order allow,deny
+        	Allow from all
+    		</Directory>
+    		<IfModule mod_php5.c>
+        		php_admin_flag safe_mode Off
+        		php_admin_value register_globals 0
+        		php_value magic_quotes_gpc 0
+        		php_value magic_quotes_runtime 0
+        		php_value allow_call_time_pass_reference 0
+   		</IfModule>
+    		DirectoryIndex index.php
+    		DocumentRoot "/opt/rh/httpd24/root/var/www/html/ecomm_project"
+    		ServerName ecomm_project
+   	</VirtualHost>'>>/opt/rh/httpd24/root/etc/httpd/conf.d/ecomm_project.conf
+fi
 echo "Restart Apache"
 echo "######################################################"
  /etc/init.d/httpd24-httpd graceful
