@@ -26,7 +26,7 @@ echo " Importing Database"
 echo "##################################################"
 cd ecomm_project/SQL 
 pwd
-	sh FindSQL.sh
+	sh FindSQL.sh migrate
 echo "###################################################"
 echo " Adding Host Entry in hosts file"
 echo "##################################################"
