@@ -59,7 +59,7 @@ echo "Restart Apache"
 echo "######################################################"
  /etc/init.d/httpd24-httpd graceful
 rm -rf ecomm_project.zip
-echo "success Check your site by typing ecommerce-cd in browser"
+echo "successfully Deployed"
 echo "###############################################"
 cd /opt/rh/httpd24/root/etc/httpd/conf.d/
 #rm -rf ecommerce-cd.conf

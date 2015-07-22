@@ -35,7 +35,7 @@ echo "##################################################"
 echo "Virtual Host Configuration"
 echo "###################################################"
 if [ -f /etc/apache2/sites-available/ecomm_project.conf ]; then
-echo  "File is already exist"
+echo  "conf File is already exist"
 else
 echo  '<VirtualHost *:80>
     		<Directory "/var/www/html/ecomm_project">
@@ -55,11 +55,12 @@ echo  '<VirtualHost *:80>
     		ServerName ecomm_project
    	</VirtualHost>'>>/etc/apache2/sites-available/ecomm_project.conf
 fi
+echo "Enabling Site to view"
 a2ensite ecomm_project.conf
 echo "Restart Apache"
 echo "######################################################"
  /etc/init.d/apache2 reload
 rm -rf ecomm_project.zip
-echo "success Check your site by typing ecommerce-cd in browser"
+echo "Successfully Deployed"
 echo "###############################################"
 
