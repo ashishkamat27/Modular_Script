@@ -24,11 +24,9 @@ chmod -R 777 ecomm_project
 echo "###################################################"
 echo " Importing Database"
 echo "##################################################"
-cd ecomm_project/sql 
+cd ecomm_project/SQL 
 pwd
-mysql -uroot -proot -e "DROP DATABASE IF EXISTS ecomm"
-mysql -uroot -proot <ecomm.sql
-mysql -uroot -proot -e "Show databases"
+	sh FindSQL.sh migrate
 echo "###################################################"
 echo " Adding Host Entry in hosts file"
 echo "##################################################"
