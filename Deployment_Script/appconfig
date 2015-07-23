@@ -1,0 +1,5 @@
+SERVERNAME=dev.ecomm.com
+PROJECTDIR=/home/root/
+INDEX=index.php
+HOSTNAME=dev.ecom.com
+
