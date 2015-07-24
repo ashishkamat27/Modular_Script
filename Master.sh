@@ -6,21 +6,21 @@ do
 		echo "###################################################################"
 		echo "Copying to Remote $ipaddress"   		
 		export SSHPASS=$password
-		sshpass -e scp -r Scripts ecomm_project.zip $username@$ip:/home/$username
+		sshpass -e scp -r Deployment_Script ecomm_project.zip $username@$ipaddress:/opt
 		echo "Succesfully Copied to $ipaddress"
 		echo "##################################################################"
 	elif [ "$1" = "environment" ]
 	then
 		echo "###################################################################"
 		echo "RUNNING ENVIRONMENT SETUP SCRIPTS $ipaddress";		
-		echo "sh /home/$username/Scripts/select_my_os.sh environment"|sshpass -p$password ssh $username@$ip 
+		echo "sh /opt/Deployment_Script/DetectMyOs.sh environment"|sshpass -p$password ssh $username@$ipaddress
 		echo "Succesfully Created Environment on $ipaddress"
 		echo "##################################################################"
 	elif [ "$1" = "deploy" ]
 	then
 		echo "###################################################"		
 		echo "RUNNING APPLICATION DEPLOYMNET SCRIPTS on $ipaddress";		
-		echo "sh /home/$username/Scripts/select_my_os.sh deploy"|sshpass -p$password ssh $username@$ip 
+		echo "sh /opt/Deployment_Script/DetectMyOs.sh deploy"|sshpass -p$password ssh $username@$ipaddress 
 		echo "Succesfully Deployed on $ipaddress"
 		echo "##################################################"
 	fi

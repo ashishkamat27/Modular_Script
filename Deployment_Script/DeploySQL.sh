@@ -1,5 +1,7 @@
 TaskName='';
-source ../DBConfig
+. ../DBConfig
+. ../appconfig
+echo $SERVERNAME
 if [ "$1" = "migrate" ]
 then
 	TaskName="migrate";
@@ -8,13 +10,13 @@ then
 	TaskName="rollback";
 fi
 
-cd ../$TaskName;
+cd $PROJECTDIR/SQL/$TaskName;
 if [ 'ls -A $TaskName' ] 
 then
 		echo "SQL script is exist in $TaskName";
 		for i in `find . -name "*.sql"`;  
 		do 
-			mysql -e "source `expr ${i:2}`" -u$DBusername -p$DBpassword ;  
+			mysql -e "source `expr ${i:2}`" -u$DBusername -p$DBpassword -h$DBHost ;  
 		done
 	        echo "done";
 else 
