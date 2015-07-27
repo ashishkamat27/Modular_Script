@@ -1,7 +1,6 @@
 TaskName='';
-. ../DBConfig
+source ../DBConfig
 . ../appconfig
-echo $SERVERNAME
 if [ "$1" = "migrate" ]
 then
 	TaskName="migrate";

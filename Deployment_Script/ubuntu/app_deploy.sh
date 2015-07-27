@@ -1,6 +1,5 @@
 #!/bin/bash
 . ../appconfig
-echo $SERVERNAME $PROJECTDIR $INDEX $HOSTNAME 
 echo "#################################################" 
 echo "Deploying Application"
 	sh deployment.sh
