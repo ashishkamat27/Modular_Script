@@ -15,7 +15,8 @@ then
 		echo "SQL script is exist in $TaskName";
 		for i in `find . -name "*.sql"`;  
 		do 
-			mysql -e "source `expr ${i:2}`" -u$DBusername -p$DBpassword -h$DBHost ;  
+			mysql -e -u$DBUSERNAME -p$DBPASSWORD -h$DBHOST $DBNAME<$i
+			#mysql -e "source `expr ${i:2}`" -u$DBusername -p$DBpassword -h$DBHost ;  
 		done
 	        echo "done";
 else 

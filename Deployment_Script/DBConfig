@@ -1,4 +1,4 @@
-DBHost=172.27.59.82
-DBusername=root
-DBpassword=root
-DBname=ecomm
+DBHOST=172.27.59.82
+DBUSERNAME=root
+DBPASSWORD=root
+DBNAME=ecomm
