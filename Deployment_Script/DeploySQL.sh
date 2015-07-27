@@ -1,5 +1,5 @@
 TaskName='';
-. ../DBConfig
+. ../dbconfig
 . ../appconfig
 if [ "$1" = "migrate" ]
 then
