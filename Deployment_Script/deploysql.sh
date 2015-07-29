@@ -1,6 +1,6 @@
 TaskName=$1;
-. ./dbconfig
-. ./appconfig
+. ./Deployment_Script/dbconfig;
+. ./Deployment_Script/appconfig;
 cd $PROJECTDIR/SQL/$TaskName;
 if [ 'ls -A $TaskName' ] 
 then
