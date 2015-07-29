@@ -24,9 +24,9 @@ do
 		echo "Succesfully Deployed on $ipaddress"
 		echo "##################################################"
 	
-#	else
-#		echo "No arguments Supplied";
-#	fi
+	else
+		echo "No arguments Supplied";
+	fi
 
 done  <$FILENAME
 
