@@ -1,4 +1,4 @@
-FILENAME="HostFile"
+FILENAME="hostfile"
 while read -r ipaddress username password
 do
 	if [ "$1" = "copy" ]
