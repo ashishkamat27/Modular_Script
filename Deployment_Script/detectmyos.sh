@@ -6,7 +6,7 @@ then
 elif [ "$1" = "deploy" ]
 then
 	task=app_deploy.sh;
-#else "No arguments supplied";
+else "No arguments supplied";
 fi
 
 
@@ -14,14 +14,14 @@ if (cat /etc/*-release|grep -iq CentOS)
 	then
 		echo "#############################"
 		echo "Centos is detected";
-		cd /opt/Deploymet_Script/centos
+		cd /opt/Deployment_Script/centos
 		sh $task;
 		echo "#############################"		
 	elif (cat /etc/*-release|grep -iq Ubuntu)
 	then
 		echo "###########################"
 		echo "Ubuntu is detected \n\n";
-		cd /opt/Deploymet_Script/ubuntu
+		cd /opt/Deployment_Script/ubuntu
 		sh $task;	
 		echo "###########################"	
 	else  

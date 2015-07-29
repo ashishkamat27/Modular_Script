@@ -23,7 +23,6 @@ do
 		echo "sh /opt/Deployment_Script/detectmyos.sh deploy"|sshpass -p$password ssh $username@$ipaddress 
 		echo "Succesfully Deployed on $ipaddress"
 		echo "##################################################"
-	
 	else
 		echo "No arguments Supplied";
 	fi
