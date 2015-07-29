@@ -26,7 +26,6 @@ do
 	
 	else
 		echo "No arguments Supplied";
-		exit;
 	fi
 
 done  <$FILENAME
@@ -39,6 +38,5 @@ then
 	sh Deployment_Script/deploysql.sh $1; 
 else
 		echo "No arguments Supplied";
-		exit;
 fi
 

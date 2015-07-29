@@ -13,6 +13,5 @@ then
  		done	
 else 
 		echo "SQL script does not exists in $TaskName";
-		exit;
 fi
 

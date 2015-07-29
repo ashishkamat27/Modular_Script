@@ -6,7 +6,9 @@ then
 elif [ "$1" = "deploy" ]
 then
 	task=app_deploy.sh;
+else "No arguments supplied";
 fi
+
 
 if (cat /etc/*-release|grep -iq CentOS)
 	then
