@@ -1,3 +1,4 @@
+#!/bin/bash
 task="";
 if [ "$1" = "environment" ]
 then 
