@@ -30,7 +30,7 @@ done  <$FILENAME
 if [ "$1" = "migrate" ]
 then
 	sh Deployment_Script/deploysql.sh $1; 
-elif ["$1" = "rollback"]
+elif [ "$1" = "rollback" ]
 then
 	sh Deployment_Script/deploysql.sh $1; 
 fi
