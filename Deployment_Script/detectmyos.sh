@@ -13,14 +13,14 @@ if (cat /etc/*-release|grep -iq CentOS)
 	then
 		echo "#############################"
 		echo "Centos is detected";
-		cd $DEPLOY_PATH/centos
+		cd /opt/Deploymet_Script/centos
 		sh $task;
 		echo "#############################"		
 	elif (cat /etc/*-release|grep -iq Ubuntu)
 	then
 		echo "###########################"
 		echo "Ubuntu is detected \n\n";
-		cd $DEPLOY_PATH/ubuntu
+		cd /opt/Deploymet_Script/ubuntu
 		sh $task;	
 		echo "###########################"	
 	else  
