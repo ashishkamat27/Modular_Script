@@ -1,3 +1,4 @@
+#!/bin/bash
 TaskName=$1;
 . ./Deployment_Script/dbconfig;
 . ./Deployment_Script/appconfig;
@@ -12,5 +13,6 @@ then
  		done	
 else 
 		echo "SQL script does not exists in $TaskName";
+		exit;
 fi
 

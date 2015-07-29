@@ -23,6 +23,10 @@ do
 		echo "sh /opt/Deployment_Script/detectmyos.sh deploy"|sshpass -p$password ssh $username@$ipaddress 
 		echo "Succesfully Deployed on $ipaddress"
 		echo "##################################################"
+	
+	else
+		echo "No arguments Supplied";
+		exit;
 	fi
 
 done  <$FILENAME
@@ -33,5 +37,8 @@ then
 elif [ "$1" = "rollback" ]
 then
 	sh Deployment_Script/deploysql.sh $1; 
+else
+		echo "No arguments Supplied";
+		exit;
 fi
 
