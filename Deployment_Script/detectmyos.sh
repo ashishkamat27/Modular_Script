@@ -1,4 +1,6 @@
 #!/bin/bash
+echo "inside detect my os ";ls;
+pwd;
 task="";
 if [ "$1" = "environment" ]
 then 
