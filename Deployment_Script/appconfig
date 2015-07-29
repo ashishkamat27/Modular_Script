@@ -11,4 +11,3 @@ CONFFILEPATH_CENTOS=/opt/rh/httpd24/root/etc/httpd/conf.d/
 CONFFILEPATH_UBUNTU=/etc/apache2/sites-available/
 ZIPNAME=ecomm_project
 DEPLOY_PATH=/opt/Deploymet_Script
-

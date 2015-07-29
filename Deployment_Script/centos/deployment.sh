@@ -1,6 +1,6 @@
 #!/bin/bash
-source ../appconfig
-echo $SERVERNAME $PROJECTDIR $INDEX $HOSTNAME  
+source ../appconfig;
+
 echo "###########################################################"
 echo "Taking artifact and extactacting into Web Server Directory"
 echo "###########################################################"

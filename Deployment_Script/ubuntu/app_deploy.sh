@@ -3,7 +3,6 @@
 echo "#################################################" 
 echo "Deploying Application"
 	sh deployment.sh
-	#sh ../deploysql.sh migrate
 echo "#######################################"
 echo "Creating Symbolic Link"
 echo "######################################"
