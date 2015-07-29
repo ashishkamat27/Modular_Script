@@ -1,5 +1,5 @@
 #!/bin/bash
-source ../appconfig
+source ../appconfig;
 
 
 echo "#################################################" 

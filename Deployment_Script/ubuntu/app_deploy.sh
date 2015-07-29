@@ -1,5 +1,5 @@
 #!/bin/bash
-. ../appconfig
+. ../appconfig;
 echo "#################################################" 
 echo "Deploying Application"
 	sh deployment.sh
