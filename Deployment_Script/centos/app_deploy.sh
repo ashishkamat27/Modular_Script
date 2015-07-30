@@ -9,8 +9,7 @@ echo "#######################################"
 echo "Creating Symbolic Link"
 echo "######################################"
 unlink $PROJECTDIR
-ln -s $PROJECTDIR $SYMPATH_CENTOS
-echo 
+ln -s $PROJECTDIR $SYMPATH_CENTOS 
 echo "######################################"
 echo "Creating Host Configuration File"
 echo "#####################################"

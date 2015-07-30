@@ -1,13 +1,12 @@
 SERVERNAME=dev.ecomm.com
 SERVERPORT=80
 SERVERIP=127.0.0.1
-PROJECTDIR=/opt/ecomm_project
+PROJECTDIR=/opt/ecomm_project_demo
 SYMPATH=/var/www/html
 SYMPATH_CENTOS=/opt/rh/httpd24/root/var/www/html
 DIR_INDEX=index.php
 HOSTNAME=dev.ecom.com
-CONFFILENAME=ecomm_project
+CONFFILENAME=ecomm_project_demo
 CONFFILEPATH_CENTOS=/opt/rh/httpd24/root/etc/httpd/conf.d/
 CONFFILEPATH_UBUNTU=/etc/apache2/sites-available/
-ZIPNAME=ecomm_project
-DEPLOY_PATH=/opt/Deploymet_Script
+ZIPNAME=ecomm_project_demo
