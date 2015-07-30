@@ -1,5 +1,4 @@
 #!/bin/bash
-ROOTPW=root
 ############### Php 5.5.6 Installation ######################
 			
 echo "#######################################################"
@@ -14,9 +13,8 @@ if   	! which php > /dev/null; then
 	cd ~
 	head -n3 /opt/rh/httpd24/enable>>.bashrc
 	head -n3 /opt/rh/php55/enable>>.bashrc
-	#echo "export PATH=/opt/rh/php55/root/usr/bin:/opt/rh/php55/root/usr/sbin${PATH:+:${PATH}}
-#export MANPATH=/opt/rh/php55/root/usr/share/man:${MANPATH}
-#">>.bashrc
+	echo "export PATH=/opt/rh/php55/root/usr/bin:/opt/rh/php55/root/usr/sbin${PATH:+:${PATH}}
+	export MANPATH=/opt/rh/php55/root/usr/share/man:${MANPATH}">>.bashrc
 	source ~/.bashrc
   	printf "\n\n"
 
@@ -36,46 +34,17 @@ if 	! which mysql>/dev/null; then
 	echo -e "Mysql is not installed!! \c"
 	echo -e "Installing Mysql..."
 	sleep 5
-	printf "\n\n"
-	if [ $# -eq0 ]; then
-		echo "No arguments supplied ..\n Using default root credeantails"
 	yum clean all
 	 yum -y install mysql-server
-	/etc/init.d/mysqld start
-	#mysql -u root -p$ROOTPW
-	printf "\n\n"
-	
-	else 
-	echo "Arguments supplied... Using given Mysql password..."
-	yum clean all
-	 yum -y install mysql-server
-	 /etc/init.d/mysqld start
-	#mysql -u root -p$2
-	printf "\n\n"
-	
+	/etc/init.d/mysqld start	
  	fi
 else
 	echo "MySQL is installed."    
-       if [ $# -eq 0 ]; then 
-		echo "Mysql password not supplied using default password"
-		mysql --version
-		 /etc/init.d/mysqld start
-		#mysql -u root -p$ROOTPW
- 		printf "\n\n"
-		
-      else 
-	 	echo "Mysql password is supplied using given password"
-		mysql --version
-		 /etc/init.d/mysqld start
-		#mysql -u root -p$2
- 		printf "\n\n"
-		
-     fi
+       	mysql --version
+	/etc/init.d/mysqld start
 fi
 ############## Apache Setup ####################
-
-#setenforce 0
-  /etc/init.d/httpd24-httpd start
-
-
+echo "Making Firewall rules to permissive";
+	setenforce 0
+  	/etc/init.d/httpd24-httpd start
 echo " started httpd server";

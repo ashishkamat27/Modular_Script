@@ -28,43 +28,19 @@ if 	! which mysql>/dev/null; then
 	echo -e "Mysql is not installed!! \c"
 	echo -e "Installing Mysql..."
 	sleep 5
-	printf "\n\n"
-	if [ $# -eq0 ]; then
-		echo "No arguments supplied ..\n Using default root credeantails"
-	apt-get clean all
-	  apt-get -y install mysql-server
-	  /etc/init.d/mysql start
-	 mysqladmin -u root -p$ROOTPW
-	printf "\n\n"
-	
-	else 
-	echo "Arguments supplied... Using given Mysql password..."
-	apt-get clean all
-	 apt-get -y install mysql-server
-	  /etc/init.d/mysql start
-	 mysqladmin -u root -p$2
-	printf "\n\n"
-	exit
+	yum clean all
+	 yum -y install mysql-server
+	/etc/init.d/mysqld start	
  	fi
 else
 	echo "MySQL is installed."    
-       if [ $# -eq 0 ]; then 
-		echo "Mysql password not supplied using default password"
-		mysql --version
-		 /etc/init.d/mysql start
-		#mysql -u root -p$ROOTPW
- 		printf "\n\n"
-		#exit
-      else 
-	 	echo "Mysql password is supplied using given password"
-		mysql --version
-		  /etc/init.d/mysql start
-		#mysql -u root -p$2
- 		printf "\n\n"
-		#exit
-     fi
+       	mysql --version
+	/etc/init.d/mysqld start
 fi
 ############## Apache Setup ####################
+echo "#######################################################"
+echo "Installing Apache"
+echo "#######################################################"
 if   	! which apache2 > /dev/null; then
    	echo -e "Apache is not installed! \c"
    	echo "Installinig Apache"
