@@ -33,22 +33,14 @@ done  <$FILENAME
 
 if [ "$1" = "migrate" ]
 then
-	echo "#################################";	
-	echo "Deploying on Single DB Server";
+
 	sh Deployment_Script/deploysql.sh $1; 
-	echo "#################################";
-	echo "Mutiple DB Servers";
-	sh Deployment_Script/deploysqltomultipleserver.sh $1;
-	echo "###################################";
+	
 elif [ "$1" = "rollback" ]
 then
-	echo "#################################";	
-	echo "For Deploying on Single DB Server";
+	
 	sh Deployment_Script/deploysql.sh $1; 
-	echo "#################################";
-	echo "For Mutiple DB Servers";
-	sh Deployment_Script/deploysqltomultipleserver.sh $1;
-	echo "###################################";
+	
 else
 		echo "No arguments Supplied";
 fi
